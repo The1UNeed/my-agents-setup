@@ -26,20 +26,20 @@ When working in svelte(kit):
 
 Rankings, higher = better. Cost reflects what I actually pay, not list price. Intelligence is how hard a problem you can hand the model
 unsupervised. Taste covers UI/UX, code quality, API design, and copy. All rankings are from 0-10
-| model       | cost | intelligence | taste |
-| ----------- | ---- | ------------ | ----- |
-| gpt-6-astra | 7    | 9            | 8     |
-| sonnet-5    | 4    | 5            | 6     |
-| opus-5      | 6    | 8            | 5     |
-| kimi-k3     | 3    | 7            | 7     |
-| fable-5.1   | 4    | 9            | 9     |
+| model            | cost | intelligence | taste |
+| ---------------- | ---- | ------------ | ----- |
+| gpt-6-astra      | 7    | 9            | 8     |
+| claude-sonnet-5  | 4    | 5            | 6     |
+| claude-opus-5    | 5    | 8            | 5     |
+| kimi-k3          | 4    | 7            | 6     |
+| claude-fable-5-1 | 3    | 9            | 9     |
 
 How to apply:
 - These are defaults, not limits. You have standing permission to override them: if a cheaper model's output doesn't meet the bar, rerun or redo the work with a smarter model without asking. Judge the output, not the price tag. Escalating costs less than shipping mediocre work. You can also adjust the reasoning level if the output doesn’t meet your expectations.
 - Cost is a tie-breaker only; when axes conflict for anything that ships, intelligence > taste > cost.
 - Bulk/mechanical work (clear-spec implementation, data analysis, migrations): gpt-6-astra
 - Anything user-facing (UI, copy, API design) needs taste >= 7.
-- Reviews of plans/implementations: fable-5.1 or gpt-6-astra, optionally opus-5 as an extra independent perspective.
+- Reviews of plans/implementations: claude-fable-5-1or gpt-6-astra, optionally claude-opus-5 as an extra independent perspective.
 - Label each sub-agent with its model name first, e.g., gpt-6-astra-(task), Sonnet5-(task), Opus5-(task).
 - Never use Haiku.
 - Never use max reasoning level for, claude models

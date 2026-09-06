@@ -17,11 +17,11 @@
 Rankings, higher = better. Cost reflects what I actually pay not list price. Intelligence is how hard a problem you can hand the model
 unsupervised. Taste covers UI/UX, code quality, API design, and copy.
 
-| model       | cost | intelligence | taste |
-| ----------- | ---- | ------------ | ----- |
-| gpt-6-astra | 7    | 9            | 7     |
-| opus-5      | 5    | 6            | 7     |
-| fable-5.1   | 4    | 9            | 9     |
+| model             | cost | intelligence | taste |
+| ----------------- | ---- | ------------ | ----- |
+| gpt-6-astra       | 7    | 9            | 7     |
+| claude-opus-5     | 5    | 6            | 7     |
+| claude-fable-5-1  | 4    | 9            | 9     |
 
 How to apply:
 
@@ -29,13 +29,13 @@ How to apply:
 - Cost is a tie-breaker only; when axes conflict for anything that ships, intelligence > taste > cost.
 - Bulk/mechanical work (clear-spec implementation, data analysis, migrations): gpt-6-astra
 - Anything user-facing (UI, copy, API design) needs taste >= 7.
-- Reviews of plans/implementations: fable-5.1 or opus-5, optionally gpt-6-astra as an extra independent perspective.
+- Reviews of plans/implementations: claude-fable-5-1 or claude-opus-5 optionally gpt-6-astra as an extra independent perspective.
 - Label each sub-agent with its model name first, e.g., GPT5.6-Sol-(task), Sonnet5-(task), Opus5-(task).
 - Never use Haiku.
 - Mechanics: gpt-6-astra is only reachable through the Codex CLI - `codex exec` / `codex review` (my `~/.codex/config.toml` defaults to gpt-6-astra). Use the codex-implementation, codex-review, and codex-computer-use skills; for work they don't cover (investigation, data analysis), run `codex exec -s read-only` directly with a self-contained prompt.
-- Claude models (sonnet-5, opus-5, fable-5.1) run via the Agent/Workflow model parameter.
+- Claude models (sonnet-5, claude-opus-5, claude-fable-5-1) run via the Agent/Workflow model parameter.
 
 Using gpt-6-astra inside workflows and subagents (the model parameter only takes Claude models, so use a wrapper):
 
-- Spawn a thin Claude wrapper agent with `model: 'sonnet 5', effort: 'low'` whose prompt instructs it to write a self-contained codex prompt, run `codex exec` via Bash.
-- The appropriate way to execute GPT 5.6 is to use a sub‑agent wrapper with `model: 'sonnet 5', effort: 'low'`. Even for a single task that should be done with gpt-6-astra you should spawn a sub‑agent.
+- Spawn a thin Claude wrapper agent with `model: 'claude-sonnet-5', effort: 'low'` whose prompt instructs it to write a self-contained codex prompt, run `codex exec` via Bash.
+- The appropriate way to execute GPT 5.6 is to use a sub‑agent wrapper with `model: 'claude-sonnet-5', effort: 'low'`. Even for a single task that should be done with gpt-6-astra you should spawn a sub‑agent.
