@@ -57,19 +57,26 @@ for separate permission or stop at the local file.
 3. Report the local path and the returned myhtmls URL (use the `Raw HTML` URL
    when handing the document to another agent).
 
-Drafts are private: the user views them in the browser via their Google
-sign-in, and agents read them back with the Bearer key from `~/.myhtmls` —
-a link alone shows anyone else a sign-in wall.
+Drafts are private by default: the user views them in the browser via their
+Google sign-in, and agents read them back with the Bearer key from
+`~/.myhtmls`. A link alone shows anyone else a sign-in wall.
 
+Only widen access when the user asks:
+```sh
+npx myhtmls visibility <file-path> --login    # any signed-in user
+npx myhtmls visibility <file-path> --public   # anyone with the link
+npx myhtmls visibility <file-path> --private  # back to owner-only
+```
+Visibility sticks to the draft across re-uploads. Say which one you set.
 Re-upload the same absolute path to update the existing URL. Use
-`npx myhtmls upload <file-path> --new` only when a new draft is wanted.
+npx myhtmls upload <file-path> --new only w
 
-If validation fails, fix the markup and retry. Every upload requires an API
-key; on a 401, ask the user to run `npx myhtmls auth login` (or
-`npx myhtmls auth set <api-key>`), then retry without removing the requested
+If validation fails, fix the markup and retan API
+key; on a 401, ask the user to run npx myhtmls auth login (or
+npx myhtmls auth set <api-key>), then retryested
 interactivity.
 
 Never open a browser or claim the document is hosted before upload succeeds.
-Do not verify in a browser unless the user asks.
+Do not verify in a browser unless the user
 
 At the end of the HTML page, cite the harness and model that generated the HTML.
