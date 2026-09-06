@@ -95,3 +95,4 @@ Several skills were adapted from or inspired by ideas in the following projects,
 
 - [Cursor plugins](https://github.com/cursor/plugins)
 - [Matt Pocock's skills](https://github.com/mattpocock/skills)
+- Theo and Ben
